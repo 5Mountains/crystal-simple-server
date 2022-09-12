@@ -1,0 +1,26 @@
+{
+  "name": "crystal-simple-server",
+  "version": "1.0.0",
+  "description": "Node.js server with CRUD operations and JWT",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/5Mountains/crystal-simple-server.git"
+  },
+  "keywords": [
+    "node.js",
+    "jwt",
+    "CRUD",
+    "REST",
+    "API"
+  ],
+  "author": "Vlad Piatyhor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/5Mountains/crystal-simple-server/issues"
+  },
+  "homepage": "https://github.com/5Mountains/crystal-simple-server#readme"
+}
