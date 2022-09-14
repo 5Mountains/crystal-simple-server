@@ -14,8 +14,6 @@ const routes = [
   { method: "get", path: "/logout", controller: logoutHandler },
 ];
 
-// const connect = function (req, res, nex) {};
-
 routes.forEach((route) => {
   router[route.method](route.path, route.controller);
 });
