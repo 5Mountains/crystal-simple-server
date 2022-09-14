@@ -1,5 +1,6 @@
-import bcrypt from "bcrypt";
 import Datastore from "nedb-promises";
+import bcrypt from "bcrypt";
+
 const userStore = Datastore.create("./store/user.db");
 
 const response = (success, message, data) => ({ success, message, data });
