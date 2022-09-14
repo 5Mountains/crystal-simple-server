@@ -12,7 +12,7 @@ const register = async (userData) => {
 
   if (!email) return response(false, "Email is required");
   if (!password) return response(false, "Password is required");
-  if (!username) response(false, "Username is required");
+  if (!username) return response(false, "Username is required");
 
   const isDuplicateEmail = !!(await userStore.findOne({ email }));
   if (isDuplicateEmail) return response(false, "Email is already exist");
