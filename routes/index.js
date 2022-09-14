@@ -9,9 +9,9 @@ import {
 } from "../controllers/index.js";
 
 const routes = [
-  { method: "post", path: "/", controller: loginHandler },
-  { method: "post", path: "/", controller: registerHandler },
-  { method: "get", path: "/", controller: logoutHandler },
+  { method: "post", path: "/login", controller: loginHandler },
+  { method: "post", path: "/register", controller: registerHandler },
+  { method: "get", path: "/logout", controller: logoutHandler },
 ];
 
 // const connect = function (req, res, nex) {};

@@ -1,5 +1,9 @@
+import { register } from "../services/userService.js";
+
 const registerHandler = async (req, res) => {
-  return res.status(200).json({ success: true });
+  const result = await register(req.body);
+
+  return res.json({ result });
 };
 
 export default registerHandler;

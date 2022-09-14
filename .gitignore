@@ -133,5 +133,7 @@ dist
 hiden
 src/server/keys
 
+# DB
+store/
 
 
