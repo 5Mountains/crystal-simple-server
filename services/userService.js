@@ -24,4 +24,20 @@ const register = async (userData) => {
   return response(true, `User - ${username} is successfully registered`);
 };
 
-export { register };
+const login = async (userData) => {
+  const email = userData.email;
+  const password = userData.password;
+
+  if (!email) return response(false, "Email is required");
+  if (!password) return response(false, "Password is required");
+
+  const foundUser = await userStore.findOne({ email });
+  if (!foundUser) return response(false, "User is does not exist");
+
+  const matchPassword = foundUser.password === password;
+  if (!matchPassword) return response(false, "Password is does not match");
+
+  return response(true, "User is successfully logged in");
+};
+
+export { register, login };
