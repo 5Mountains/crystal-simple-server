@@ -56,8 +56,14 @@ const login = async (userData) => {
     const accessToken = generateAccessToken(foundUser.username, "30m");
     const refreshToken = generateRefreshToken(foundUser.username, "7d");
 
+    await userStore.update(
+      { username: foundUser.username },
+      { $set: { refreshToken: refreshToken } }
+    );
+    userStore.persistence.compactDatafile();
+
     return response(true, `User - ${username} is successfully login`, {
-      accessToken,
+      token: accessToken,
     });
   }
 
