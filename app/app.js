@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import createError from "http-errors";
 import router from "../routes/index.js";
+import validateToken from "../middleware/validateToket.js";
 
 // pathes
 import { dirname } from "path";
@@ -23,6 +24,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use("/", router);
+
+app.use(validateToken);
 
 app.use((req, res, next) => {
   next(createError(404));
