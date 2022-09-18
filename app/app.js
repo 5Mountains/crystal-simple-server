@@ -3,7 +3,9 @@ import express from "express";
 import cors from "cors";
 import createError from "http-errors";
 import router from "../routes/index.js";
-import validateToken from "../middleware/validateToket.js";
+const cookieParser = require("cookie-parser");
+
+import validateToken from "../middleware/validateToken.js";
 
 // pathes
 import { dirname } from "path";
@@ -22,6 +24,7 @@ const app = express();
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cookieParser());
 
 app.use("/", router);
 
